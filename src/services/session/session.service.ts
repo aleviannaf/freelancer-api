@@ -31,6 +31,10 @@ const sessionService = async (
         throw new AppError("Username or password is incorrect", 401)
     }
 
+    if(!queryResult.rows[0].active){
+        throw new AppError("This developer is inactive", 401)
+    }
+
     const token: string = sign(
         { email: queryResult.rows[0].email},
         process.env.SECRET_KEY!,
