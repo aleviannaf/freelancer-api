@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
 import createDeveloperService from "../services/developers/createDevelopers.service";
+import { deleteDeveloperService } from "../services/developers/deleteDeveloper.service";
+import { listDeveloperProjectsService } from "../services/developers/listDeveloperProjects.service";
 
 
 
@@ -17,8 +19,9 @@ const listDeveloperProjectsController = async (
   res: Response
 ): Promise<Response> => {
  
-
-  return res.status(200).json();
+  const projectsDeveloper = await listDeveloperProjectsService(req.params.id)
+  
+  return res.status(200).json(projectsDeveloper);
 };
 
 const deleteDeveloperController = async (
@@ -26,6 +29,8 @@ const deleteDeveloperController = async (
   res: Response
 ): Promise<Response> => {
   
+  await deleteDeveloperService(req.params.id)
+
   return res.status(204).json();
 };
 
