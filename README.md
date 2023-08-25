@@ -78,7 +78,7 @@ The "freelancer api" is a simple API for managing freelance job advertisements f
             "Required"
         ]
     }
-    ``
+    ```
     Exemplo de retorno de erro (status 500):
     ```json
     {
