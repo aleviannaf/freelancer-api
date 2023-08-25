@@ -33,7 +33,7 @@ The "freelancer api" is a simple API for managing freelance job advertisements f
             "Required"
         ]
     }
-    ``
+    ```
     Exemplo de retorno de erro (status 401):
     ```json
     {
@@ -60,7 +60,6 @@ The "freelancer api" is a simple API for managing freelance job advertisements f
         "password": "senh@$egur@"
     }
     ```
-
     Exemplo de retorno de sucesso (status 201):
     ```json
     {
@@ -119,7 +118,6 @@ The "freelancer api" is a simple API for managing freelance job advertisements f
         "message": "There is no project linked to this developer"
     }
     ```
-
     Exemplo de retorno de erro (status 500):
     ```json
     {
