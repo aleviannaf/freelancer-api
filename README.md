@@ -5,7 +5,7 @@ The "freelancer api" is a simple API for managing freelance job advertisements f
 
 1. **Criar conta developer**
 
-    Endpoint: `GET /developers`
+    Endpoint: `POST /developers`
 
     Parâmetros no Corpo da Requisição:
     - `name` (string) - Nome do desenvolvedor.
@@ -46,3 +46,47 @@ The "freelancer api" is a simple API for managing freelance job advertisements f
         "message": "Internal server error"
     }
     ```
+
+2. **Listar de todos os projetos do desenvolvedor**
+
+    Endpoint: `GET /developers/:id`
+
+    Parâmetros:
+    - `id` (numérico) - ID da conta do desenvolvedor.
+    - Token - adquirido ao realizar login
+
+    Esta rota traz os detalhes de todos os projetos que o desenvolvedor participa/paticipou, referente ao ID passado.
+
+    Exemplo de retorno de sucesso (status 200):
+    ```json
+    [
+        {
+            "developerId": 1,
+            "developerName": "Alexandre Vianna",
+            "developerEmail": "alexandrevianna511@gmail.com",
+            "developerIsActive": true,
+            "projectId": 1,
+            "projectTitle": "KenzieDevelopers",
+            "projectDescription": "Projeto backend",
+            "projectTechnology": "Express.js",
+            "projectRepository": "github.com/kenzie-Academy-Brasil-Developers/kenziedevelopers",
+            "projectStartDate": "2023-08-24T01:57:26.385Z"
+        }
+    ]
+    ```
+
+    Exemplo de retorno de erro (status 404):
+    ```json
+    {
+        "message": "There is no project linked to this developer"
+    }
+    ```
+
+    Exemplo de retorno de erro (status 500):
+    ```json
+    {
+        "message": "Internal server error"
+    }
+    ```
+
+
