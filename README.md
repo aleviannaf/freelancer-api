@@ -20,7 +20,6 @@ The "freelancer api" is a simple API for managing freelance job advertisements f
         "password": "senhasegura"
     }
     ```
-
     Exemplo de retorno de sucesso (status 200):
     ```json
     {
